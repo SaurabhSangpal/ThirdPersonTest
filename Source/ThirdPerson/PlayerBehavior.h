@@ -10,34 +10,34 @@ class UCharacterMovementComponent;
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class THIRDPERSON_API UPlayerBehavior : public UActorComponent {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
    public:
-	// Sets default values for this component's properties
-	UPlayerBehavior();
+    // Sets default values for this component's properties
+    UPlayerBehavior();
 
    protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
+    // Called when the game starts
+    virtual void BeginPlay() override;
 
    public:
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
-							   FActorComponentTickFunction* ThisTickFunction) override;
+    // Called every frame
+    virtual void TickComponent(float DeltaTime, ELevelTick TickType,
+                               FActorComponentTickFunction* ThisTickFunction) override;
 
    private:
-	void SetGravityScaleToNormal();
-	void SetGravityScaleToFalling();
+    void SetGravityScaleToNormal();
+    void SetGravityScaleToFalling();
 
    public:
-	// Multiplier to gravity value when the actor isn't falling
-	UPROPERTY(EditAnywhere)
-	float NormalGravityScale;
-	// Multiplier to gravity value when the actor is falling
-	UPROPERTY(EditAnywhere)
-	float FallingGravityScale;
+    // Multiplier to gravity value when the actor isn't falling
+    UPROPERTY(EditAnywhere)
+    float NormalGravityScale;
+    // Multiplier to gravity value when the actor is falling
+    UPROPERTY(EditAnywhere)
+    float FallingGravityScale;
 
    private:
-	AActor*						 MyActor;
-	UCharacterMovementComponent* MyCharacterMovement;
+    AActor*                      MyActor;
+    UCharacterMovementComponent* MyCharacterMovement;
 };
